@@ -117,7 +117,8 @@ def generate_discarded_pdf(discarded_contacts):
 # ----------------- Tools -----------------
 
 def tool_merge_contacts():
-    st.subheader("🔗 Merge Two VCF Files")
+    st.subheader("🔗 Merge and Clean Two VCF Files")
+    st.markdown("_If you only want to clean one file, upload it twice._")
     vcf1 = st.file_uploader("📤 Upload First VCF File", type=["vcf"], key="vcf1")
     vcf2 = st.file_uploader("📤 Upload Second VCF File", type=["vcf"], key="vcf2")
 
@@ -251,9 +252,9 @@ def tool_add_prefix():
 st.set_page_config(page_title="VCF Toolbox", layout="centered")
 st.title("🔧 VCF Toolbox")
 # tool = st.sidebar.selectbox("Select Tool", ["Merge Contacts", "Add Prefix to Names","Remove Invalid Contacts"])
-tool = st.sidebar.selectbox("Select Tool", ["Merge Contacts", "Add Prefix to Names"])
+tool = st.sidebar.selectbox("Select Tool", ["Merge & Clean Contacts", "Add Prefix to Names"])
 
-if tool == "Merge Contacts":
+if tool == "Merge & Clean Contacts":
     tool_merge_contacts()
 elif tool == "Add Prefix to Names":
     tool_add_prefix()
